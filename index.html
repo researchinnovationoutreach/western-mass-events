@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Professional Development Opportunities for Educators</title>
+		<meta name="description" content="A searchable database of professional development opportunities for educators.">
+		<meta charset="utf-8" />
+
+		<style type="text/css">
+		
+			body, input { 
+				font-family: 'Verdana'; 
+				font-size: 12px;
+				margin: 0;
+				line-height: 140%;
+				}
+				
+			h1 {
+				font-size: 1.25em;
+				font-weight: bold;
+				padding-bottom: 1em;
+				margin-top: 3em;
+			}
+
+			main {
+				max-width: 85em;
+				margin: 2em;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 0 1em;
+			}
+			
+			.container {
+				max-width: 85em;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			header {
+				padding: 1em;
+				background: #006400;
+				padding-top: 1em;
+			}
+			
+			header img {
+				max-width: 70em;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			h2 {
+				font-size: 1em;
+				margin: 2em 0 1em 0;
+				text-transform: uppercase;
+				letter-spacing: .05em;
+				font-weight: bold;
+vertical-align: text-bottom;
+
+			}
+			
+			.result-count {
+			    font-weight: normal;
+			    text-transform: none;
+			    letter-spacing: 0;
+			    display: block;
+			    margin-top: 1em;
+			}
+			
+			.cancel {
+			    color: #fff;
+			    background: #ccc;
+			    display: inline-block;
+			    padding: .25em;
+			    font-size: .7em;
+			    width: .85em;
+			    line-height: 1em;
+			    letter-spacing: 0;
+			    margin-left: .5em;
+                vertical-align: text-top;
+
+			}
+			
+			.cancel:hover {
+			    background: #999;
+			}
+		
+			.date { 
+				}
+				
+			.name { 
+				font-weight: bold 
+				}
+				
+			.org { 
+			        margin: 0 0 1em 0;
+				}
+				
+			.fee {
+			    font-weight: bold;
+			}
+				
+			.more-info {
+				margin-top: .5em;
+			}
+
+            table {
+				border-collapse: collapse;
+				width: 100%;
+			    table-layout: auto;
+            }
+            
+			td, th {
+				vertical-align: top;
+				padding: 1em 2em 1em 0;
+				margin: 0;
+				border-bottom: #ccc 1px solid;
+				position: relative;
+			}
+				
+			th { 
+				border-bottom: #000 1px solid; 
+				text-align: left; 
+				font-weight: bold;
+			} 
+			
+			a { 
+				text-decoration: none; 
+				color: #006400;
+				}
+				
+			a.category {
+				background: #006400;
+				font-size: 75%;
+				color: #fff;
+				padding: .2em .4em ;
+				margin: .2em;
+				text-transform: uppercase;
+				letter-spacing: .05em;
+				display: block;
+			}
+			
+			a.category:hover {
+				background: #000;
+			}
+				
+			.description {
+				display: none;
+				overflow: hidden;
+			}
+			
+			#categories {
+				column-count: 4;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			#categories li {
+				padding: .1em 0;
+				margin: 0;
+			}
+			
+			#categories a {
+				color: #006400;
+			}
+
+			#categories a:hover {
+				color: #000;
+			}
+			
+			.meta {
+				padding: 2em;
+				background: #efefef;
+			}
+			
+            td.categories {
+                width: 15%;
+                max-width: 12em;
+            }
+			td.date {
+			    width: 15%;
+			    max-width: 5em;
+			}
+			td.location {
+			    width: 15%;
+			    max-width: 5em;
+			}
+			td.name-col {
+			    width: 50%;
+			} 
+			
+			.arrow {
+				color: #999;
+				text-align: left;
+				cursor: pointer;
+				height: calc(100% - 1.5em);
+			}
+			
+			
+			.arrow:hover {
+			    color: #000;
+			}  
+			
+			#searchterm {
+			    margin-top: 1em;
+			}
+			
+			footer {
+			    margin-top: 2em;
+			    padding: 0 1em;
+			}
+			
+			
+			.categories-mobile {
+			    display: none;
+			}
+			
+			@media (max-width: 40em) {
+                td.categories {
+                    width: 15%;
+                    max-width: 10em;
+                }
+                td.location, td.date {
+                    max-width: 3.5em;
+                    text-overflow: ellipsis;
+                }
+			}
+			
+			@media (max-width: 30em) {
+			
+			main {
+			    margin: .5em;
+			    max-width: 100%;
+			}
+			.container {
+			    max-width: 100%;
+			}
+			
+			table {
+			    position: relative;
+			}
+			
+			th {
+			    display: none;
+			}
+			    td, td.name-col, td.location, td.date {
+			        display: block;
+			        width: inherit;
+			        max-width: inherit;
+			        border: 0;
+			    }
+			    
+			    td.location, td.date {
+			    margin: 0;
+			    padding: 0;
+			    }
+			    
+			    td.location:before {
+			        content: 'Location: ';
+			        color: #999;
+			    }
+
+			    td.date:before {
+			        content: 'Date: ';
+			        color: #999;
+			    }
+			    
+			    td.name-col {
+			        width: inherit;
+                    margin-top: 1.5em;
+                    padding-top: 1.5em;
+                    border-top: 1px solid #ccc;
+			    }
+
+			    
+			    #categories {
+			    	column-count: 2;
+			    }
+
+                .categories-mobile {
+                    display: block;
+                    padding: 1em 0 .5em 0 ;
+                }
+                .categories {
+                    display: none;
+                }
+			    a.category {
+			        width: auto;
+			        display: inline;
+			        margin: 0;
+			    }
+			    
+			}
+			
+
+		</style>
+	
+        <!-- actually not using jquery at the moment -->
+        <!--
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        -->
+  
+        <!-- tabletop converts a google sheet to javascript data 
+    	<script type="text/javascript" src="tabletop-master/src/tabletop.js"></script>
+        -->
+        
+        <!-- load the cached json data variable -->
+    	<script type="text/javascript" src="cache/cache.json"></script>
+
+        <script type="text/javascript">
+        
+            // MISC FUNCTIONS
+            
+            // look at the URL string for a specific variable and return the result
+            function getQueryVariable(variable)
+            {
+                   var query = window.location.search.substring(1);
+                   var vars = query.split("&");
+                   for (var i=0;i<vars.length;i++) {
+                           var pair = vars[i].split("=");
+                           if(pair[0] == variable){return pair[1];}
+                   }
+                   return(false);
+            }
+    
+            // convert from plain text to URL variable format
+            // right now that just means no spaces
+            function encode(s) {
+                s = encodeURIComponent( s );
+                return s;
+            }
+
+            // convert back from URL variable to plain text
+            function decode(s) {
+                s = decodeURIComponent( s.replace(/\+/g, '%20') );
+                return s;
+            }
+        
+            // show/hide description by toggling display of element following the one that is clicked
+            function toggle(sender) {
+                console.log('toggle');
+                var nextElement = sender.nextSibling;
+                if ( nextElement.style.display == 'block' ) {
+                    nextElement.style.display = 'none';
+                    sender.innerHTML = 'Additional Information ▶';
+                } else {
+                    nextElement.style.display = 'block';
+                    sender.innerHTML = 'Additional Information ▼';
+                    }
+            }
+    
+            // seems like an overly complicated way to add URL variables to the existing query string
+            // using this so that a <th> link can sort columns without canceling the existing query
+            // grabbed this from stack exchange
+            function setParam(name, value) {
+                var l = window.location;
+
+                /* build params */
+                var params = {};		
+                var x = /(?:\??)([^=&?]+)=?([^&?]*)/g;		  
+                var s = l.search;
+                for(var r = x.exec(s); r; r = x.exec(s))
+                {
+                    r[1] = decodeURIComponent(r[1]);
+                    if (!r[2]) r[2] = '%%';
+                    params[r[1]] = r[2];
+                }
+
+                /* set param */
+                params[name] = encodeURIComponent(value);
+
+                /* build search */
+                var search = [];
+                for(var i in params)
+                {
+                    var p = encodeURIComponent(i);
+                    var v = params[i];
+                    if (v != '%%') p += '=' + v;
+                    search.push(p);
+                }
+                search = search.join('&');
+
+                /* execute search */
+                l.search = search;
+            }
+            
+            // a quick and dirty search
+            function searchFor(userInput, string) {
+                var matchString = userInput.toLowerCase();
+                if (string.toLowerCase().indexOf(matchString) != -1) {
+                    return true;
+                } else {
+                    return false;
+                    }
+            }
+    
+
+    
+            // SPREADSHEET PROCESSING
+        
+            // if we load initCached() we will use the cached version
+            window.onload = function() { initCached() };
+
+            // if we load initTableTop() we will use the live spreadsheet
+
+            function initTabletop() {
+            
+            
+                var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1XVO1smiI3iOoLJt1nPkmnxqWb2Zi4okiDTtghdBfUcQ/pubhtml';    
+                // get orderby and reverse queries for table ordering
+                var orderby = getQueryVariable('orderby');
+                if (! orderby) {
+                    orderby = 'Name';
+                }
+
+                var reverse = getQueryVariable('reverse');
+                if (! reverse) {
+                    reverse = false;
+                } else {
+                    reverse = true;
+                }
+
+
+                var loc = window.location.pathname;
+                var dir = loc.substring(0, loc.lastIndexOf('/'));
+
+                // query the spreadsheet, and call showInfo() on callback
+                
+                Tabletop.init( { key: public_spreadsheet_url,
+                                 callback: showInfo,
+                                 simpleSheet: true,
+                                 orderby: orderby,
+                                 reverse: reverse ,
+                                 proxy: dir,
+                                 } );
+               
+                
+                //var data = JSON.parse(rawdata);
+                //showInfo(data);
+                          }
+                          
+            function initCached() {            
+                showInfo(data);
+            }
+          
+
+          function showInfo(data) {
+                    
+            // this is where the magic happens
+            
+            
+            function compareStrings(a, b) {
+              // Assuming you want case-insensitive comparison
+              a = a.toLowerCase();
+              b = b.toLowerCase();
+
+              return (a < b) ? -1 : (a > b) ? 1 : 0;
+            }
+
+            data.sort(function(a, b) {
+              return compareStrings(a.Name, b.Name);
+            })
+            
+            // data comes through as a simple array since simpleSheet is turned on
+        
+            // get category URL variable
+            var categoryQuery = getQueryVariable('category');
+            var searchQuery = getQueryVariable('search');
+            
+            if (categoryQuery) {
+                categoryQuery = decode(categoryQuery);
+            }
+            
+            if (searchQuery) {
+                searchQuery = decode(searchQuery);
+            }
+            
+            // set the table headers
+            
+            /* var results = '<table><tr><th id="categories-header">Categories</th><th id="name-header"><a href="javascript:setParam(\'orderby\', \'Name\');">Name</a></th><th id="date-header"><a href="javascript:setParam(\'orderby\', \'Date\');">Date</th><th id="location-header"><a href="javascript:setParam(\'orderby\', \'Location\');">Location</a></th>'; */
+        
+            // populate the results variable, which is the HTML code for our table
+            var results = '<table><tr><th id="categories-header">Categories</th><th id="name-header">Name</th><th id="date-header">Date</th><th id="location-header">Location</th>';
+            var resultCount = 0;
+
+            // keep a running array of all categories, which we will stick at the top of the page
+            var allCategories = [];
+            
+            // loop through each row in the spreadsheet
+            for (i = 0; i < data.length; i++) {
+            
+                // we will display this row unless this variable is negated
+                var display = true;
+            
+                // get the data we want to show
+                
+                // if there is a link include it in the name
+                if ( data[i].URL ) {
+                    var name = '<a href="' + data[i].URL + '" onclick="trackOutboundLink(\'' + data[i].URL + '\'); return false;">' + data[i].Name + '</a>';
+                } else {
+                    var name = data[i].Name
+                    }
+                    
+                // get the org
+                var org = data[i].Organization;
+                
+                // we aren't showing the fee status, but keeping this for later
+                /*
+                if ( data[i]["Fee/Free and/or Stipend"] ) {
+                    var fee = '<div class="fee">' + data[i]["Fee/Free and/or Stipend"] + "</div>";
+                } else {
+                    var fee = '';
+                }
+                */
+
+                // process the categories
+                // the categories are stored as a comma delimited list
+            
+                // split the raw categories into an array
+                var categoriesRaw = data[i].Category;
+                var categoryList = categoriesRaw.split(", ");
+                categoryList.sort()
+                
+                // if a category query exists and ours doesn't match, don't show it
+                if ( categoryQuery && categoryList.indexOf(categoryQuery) == -1 ) {
+                    display = false;
+                }
+
+                // loop through the categories and build a sequence 
+                // of links to display, rather than the raw list
+                var categories = ' ';
+                for (ci = 0; ci < categoryList.length; ci++) {
+                    if (categoryList[ci]) {
+                                        
+                        categories += '<a href="?category=' + encode(categoryList[ci]) + '" class="category">' + categoryList[ci] + '</a> ';
+                        }
+                    if ( categoryList[ci] && allCategories.indexOf(categoryList[ci]) == -1 ) {
+                        allCategories.push(categoryList[ci]);
+                    }
+                }
+                
+                
+                if (searchQuery != false && searchQuery != 'false') {
+                                
+                    console.log(searchQuery);
+                    if (  searchFor(searchQuery, data[i].Name) == false && searchFor(searchQuery, data[i].Location) == false && searchFor(searchQuery, data[i].Organization) == false && searchFor(searchQuery, data[i].Description) == false && searchFor(searchQuery, data[i].Date) == false ) {
+                        display = false;
+                    }
+                }
+                
+        
+                // the time has come
+                // add the HTML of the table row
+                // I've broken this apart for easier edibility and readability
+                if ( display ) {
+                    resultCount += 1;
+                    results +=	'<tr>'
+                    results += '<td class="categories">' + categories +	 '</td>'
+                    results += '<td class="name-col"><span class="name">' + name + '</span>';
+                    results += '<div class="accordion">';
+                    results += '<div class="org">' + org + '</div>';
+                    results += '<a class="arrow" onClick="toggle(this);">Additional Information ▶</a>'
+                    results += '<div class="description">' + data[i].Description.replace(/(?:\r\n|\r|\n)/g, '<br />') + '</div>';
+                    results += '</div></td>';
+                    results += '<td class="date">' + data[i].Date + '</td>';
+                    results += '<td class="location">' + data[i].Location + '</td>';
+                    results += '<td class="categories-mobile">' + categories + '</td>';
+
+                    results +=	'</tr>';
+                }
+            }
+            // lay the results in the HTML
+            results += '</table>';
+            document.getElementById("returns").innerHTML = results;
+        
+            // now display all categories in a list
+            allCategories.sort()
+            var categoryRes = '<li><a href="?"><strong>All Entries</strong></a></li>';
+            for (i = 0; i < allCategories.length; i++) {
+                categoryRes += '<li><a href="?category=' + encode(allCategories[i]) + '">' + allCategories[i] + '</a></li>';
+            }
+            // and set that in the HTML
+            document.getElementById("categories").innerHTML = categoryRes;
+
+
+			var pageTitle = 'Professional Development Opportunities for Educators'
+            // set the subtitle
+            if (categoryQuery) {
+                document.getElementById("subtitle").innerHTML = categoryQuery + ' <a href="?" class="cancel">×</a>';
+                pageTitle += ': ' + categoryQuery
+            } else if (searchQuery) {
+                document.getElementById("subtitle").innerHTML = 'Results for "' + searchQuery + '" <a href="?" class="cancel">×</a>';
+                document.getElementById("searchterm").value = searchQuery;
+                pageTitle += ': ' + 'Results for ' + searchQuery
+            } else {
+                document.getElementById("subtitle").innerHTML = 'All Entries';
+            }
+            
+            document.getElementById("subtitle").innerHTML += '<span class="result-count">' + resultCount + ' results</span>';
+			
+			document.title = pageTitle;
+
+
+        }
+
+          /*document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");		*/
+        </script>
+        
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90026234-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script>
+/**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+        
+        
+    
+        
+	</head>
+	
+	<!-- because everything happens in javascript our body is painfully simple -->
+    <body>
+        <header>
+            <div class="container">
+                <img src="images/rio-logo-white.svg" />
+            </div>
+        </header>
+        <main>
+            <h1><a href="index.html">Professional Development Opportunities for Educators</a></h1>
+            
+            <div class="meta">
+                <ul id="categories"></ul>
+            
+                <form name="searchform" action="index.html" method="get"> 
+                    <strong>Search:</strong>&nbsp;&nbsp;&nbsp;<input type="text" size="30" name="search" id="searchterm" />
+                    <input type="submit" value="Search" style="display:none" />
+                </form>
+            </div>
+            
+            <h2 id="subtitle"></h2>
+            <p id="returns"></p>
+        </main>
+        <footer>
+            <div class="container">
+        
+                <p>Please send inquiries, suggestions, and submissions to <a href="https://deerfield.edu/directory/staff/erichardson/">Emily Richardson</a>.</p>
+                
+            </div>
+        
+            </footer>
+    
+    
+        <script>
+            // searchbox
+            
+            var input = document.getElementById('searchterm');
+            function submitSearch() {
+                if (input.value) {
+                    setParam('search', input.value);
+                    } else {
+                    setParam('search', false);
+                    }
+            };
+    
+
+        </script>
+    
+    </body>
+</html>

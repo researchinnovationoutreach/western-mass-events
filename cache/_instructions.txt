@@ -1,0 +1,10 @@
+1. Open up Terminal
+2. Run the following: 
+
+python /path/to/refreshCache.py
+
+(Instead of typing the full path, you can drag the refreshCache.py file onto Terminal)
+
+3. A CSV and JSON file will be generated in the /cache folder.
+4. Write a commit message like "update cache"
+5. Commit and Sync the repository in GitHub
