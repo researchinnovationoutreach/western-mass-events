@@ -11,7 +11,7 @@ import string
 import subprocess
 
 # set the URL that we want to update from
-remoteURL = "https://docs.google.com/spreadsheets/d/1XVO1smiI3iOoLJt1nPkmnxqWb2Zi4okiDTtghdBfUcQ/export?gid=0&format=csv"
+remoteURL = "https://docs.google.com/spreadsheets/d/1E78Wo-wL9RtJcoc-8Cuwy7wVN_FJVRAf_GlxKkVifJk/export?gid=0&format=csv"
 # set the paths for the local files
 base = os.path.split(__file__)[0]
 csvPath = os.path.join(base, 'cache.csv')
@@ -36,7 +36,7 @@ jsonfile = open(jsonPath, 'w')
 # recreate the CSV file, I don't know why
 csvfile = open(os.path.join(base, 'cache.csv'), 'r')
 
-fieldnames = ('Name', 'Category', 'Organization', 'Date', 'Application Deadline', 'Location', 'Fee/Free and/or Stipend', 'Description', 'URL', 'Graduate Credit', 'Students too?', 'Emily: \xf0\x9f\x91\x8d')
+fieldnames = ('Name', 'Category', 'Organization', 'Date', 'Time', 'Location', 'Description', 'URL', 'Emily: \xf0\x9f\x91\x8d')
 
 # read the CSV, loop through it, and dump the JSON for each row
 reader = csv.DictReader(csvfile, fieldnames)
