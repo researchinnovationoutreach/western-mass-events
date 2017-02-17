@@ -36,7 +36,7 @@ jsonfile = open(jsonPath, 'w')
 # recreate the CSV file, I don't know why
 csvfile = open(os.path.join(base, 'cache.csv'), 'r')
 
-fieldnames = ('Name', 'Category', 'Organization', 'Date', 'Time', 'Location', 'Description', 'URL', 'Emily: \xf0\x9f\x91\x8d')
+fieldnames = ('Name', 'Category', 'Organization', 'Date', 'End Date', 'Time', 'Location', 'Description', 'URL', 'Emily: \xf0\x9f\x91\x8d')
 
 # read the CSV, loop through it, and dump the JSON for each row
 reader = csv.DictReader(csvfile, fieldnames)
