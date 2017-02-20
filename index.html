@@ -565,7 +565,7 @@ vertical-align: text-bottom;
                     results += '<a class="arrow" onClick="toggle(this);">Additional Information ▶</a>'
                     results += '<div class="description">' + data[i].Description.replace(/(?:\r\n|\r|\n)/g, '<br />') + '</div>';
                     results += '</div></td>';
-                    results += '<td class="date">' + data[i].Date + '</td>';
+                    results += '<td class="date">' + data[i].Date + '<br />' + data[i].Time + '</td>';
                     results += '<td class="location">' + data[i].Location + '</td>';
                     results += '<td class="categories-mobile">' + categories + '</td>';
 
