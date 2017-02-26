@@ -9,6 +9,7 @@ import json
 import os
 import string
 import subprocess
+import datetime
 
 # set the URL that we want to update from
 remoteURL = "https://docs.google.com/spreadsheets/d/1E78Wo-wL9RtJcoc-8Cuwy7wVN_FJVRAf_GlxKkVifJk/export?gid=0&format=csv"
@@ -46,13 +47,24 @@ reader = csv.DictReader(csvfile, fieldnames)
 
 jsonfile.write('var data = [')
 i = 0
+
+now = datetime.datetime.now()
+
+skipped = 0
 for row in reader:
     # don't write the first row because it is just the table headers
-    if i != 0:
-        json.dump(row, jsonfile)
-        jsonfile.write(',\n')
     i += 1
+    if i == 1:
+        continue
+
+    d = datetime.datetime.strptime(row['Date'], "%a, %b %d, %Y")    
+    if d < now:
+        skipped += 1
+        continue
+    
+    json.dump(row, jsonfile)
+    jsonfile.write(',\n')
 
 jsonfile.write('];')
 
-print 'Updated cache for ' + str(i+1) + ' rows.'
+print 'Updated cache for ' + str(i) + ' rows, and skipped ' + str(skipped) + ' past events.'
