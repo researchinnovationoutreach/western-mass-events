@@ -11,6 +11,7 @@ import string
 import subprocess
 import datetime
 
+
 # set the URL that we want to update from
 remoteURL = "https://docs.google.com/spreadsheets/d/1E78Wo-wL9RtJcoc-8Cuwy7wVN_FJVRAf_GlxKkVifJk/export?gid=0&format=csv"
 # set the paths for the local files
@@ -48,7 +49,7 @@ reader = csv.DictReader(csvfile, fieldnames)
 jsonfile.write('var data = [')
 i = 0
 
-now = datetime.datetime.now()
+now = datetime.datetime.now() - datetime.timedelta(days=1)
 
 skipped = 0
 for row in reader:
@@ -58,7 +59,8 @@ for row in reader:
         continue
 
     d = datetime.datetime.strptime(row['Date'], "%a, %b %d, %Y")    
-    if d < now:
+    print d <= now, d, now, row['Name'][:10]
+    if d <= now:
         skipped += 1
         continue
     
