@@ -59,7 +59,7 @@ for row in reader:
         continue
 
     d = datetime.datetime.strptime(row['Date'], "%a, %b %d, %Y")    
-    print d <= now, d, now, row['Name'][:10]
+    #print d <= now, d, now, row['Name'][:10]
     if d <= now:
         skipped += 1
         continue
