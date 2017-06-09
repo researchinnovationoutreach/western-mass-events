@@ -11,6 +11,8 @@ import string
 import subprocess
 import datetime
 
+onlyFutureResults = False
+
 
 # set the URL that we want to update from
 remoteURL = "https://docs.google.com/spreadsheets/d/1E78Wo-wL9RtJcoc-8Cuwy7wVN_FJVRAf_GlxKkVifJk/export?gid=0&format=csv"
@@ -60,7 +62,7 @@ for row in reader:
 
     d = datetime.datetime.strptime(row['Date'], "%a, %b %d, %Y")    
     #print d <= now, d, now, row['Name'][:10]
-    if d <= now:
+    if d <= now and onlyFutureResults:
         skipped += 1
         continue
     
