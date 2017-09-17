@@ -59,8 +59,10 @@ for row in reader:
     i += 1
     if i == 1:
         continue
-
-    d = datetime.datetime.strptime(row['Date'], "%a, %b %d, %Y")    
+    try:
+        d = datetime.datetime.strptime(row['Date'], "%a, %b %d, %Y")
+    except:
+        print 'parse error', row['Date'], row['Name']
     #print d <= now, d, now, row['Name'][:10]
     if d <= now and onlyFutureResults:
         skipped += 1
