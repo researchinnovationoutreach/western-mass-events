@@ -11,7 +11,7 @@ import string
 import subprocess
 import datetime
 
-onlyFutureResults = False
+onlyFutureResults = True
 
 
 # set the URL that we want to update from
